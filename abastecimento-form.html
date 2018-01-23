@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>abastecimento-form</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <form [formGroup]="formAbastecimento" (ngSubmit)="formAbastecimentoSubmit()">
+
+        <ion-item>
+            <ion-label stacked>Veiculo</ion-label>
+            <ion-select formControlName="veiculo">
+                <ion-option *ngFor="let v of veiculos" value="{{v.id}}">{{v.modelo}}</ion-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>KM Atual</ion-label>
+            <ion-input type="text" formControlName="kmAtual"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>Quantidade de litros</ion-label>
+            <ion-input type="number" formControlName="qtdeLitros"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <button ion-button type="submit">Gravar</button>
+        </ion-item>
+
+    </form>
+
+</ion-content>

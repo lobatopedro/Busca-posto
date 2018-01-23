@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <ion-list>
+
+        <ion-item *ngFor="let v of veiculos">
+          <h2>{{ v.modelo }}</h2>
+          <p>Total KM: {{ v.total_km }}</p>
+          <p>Total Litros: {{ v.total_litros }}</p>
+          <p>Média: {{ v.media }}</p>
+
+        </ion-item>
+
+    </ion-list>
+
+</ion-content>

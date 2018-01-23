@@ -1,0 +1,24 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>Busca Posto Opções</ion-title>
+
+        <ion-buttons end>
+            <button ion-button (click)="salvar()">
+                SALVAR
+            </button>
+        </ion-buttons>
+
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-range min="1" max="50" pin="true" [(ngModel)]="raio">
+        <ion-icon range-left small name="contrast"></ion-icon>
+        <ion-icon range-right name="contrast"></ion-icon>
+    </ion-range>
+
+</ion-content>

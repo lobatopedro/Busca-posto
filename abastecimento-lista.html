@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Abastecimentos</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list>
+
+  <ion-item-sliding *ngFor="let a of abastecimentos">
+
+    <ion-item>
+    <h2>{{a.veiculo }}</h2>
+    <p><span>KM Atual:</span> {{ a.KmAtual }}</p>
+    <p><span>Qtde. Litros:</span> {{ a.qtdeLitros }}</p>
+
+    </ion-item>
+
+
+    <ion-item-options side="right">
+    <button ion-button color="danger" (click)="abastecimentoExclui( a.id )">
+    <ion-icon name="trash"></ion-icon>
+    Excluir
+    </button>
+    </ion-item-options>
+
+  </ion-item-sliding>
+
+  </ion-list>
+
+    <ion-fab bottom right>
+        <button ion-fab (click)="abreAbastecimentoForm()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+
+</ion-content>

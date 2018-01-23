@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>veiculo-form</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+    <form [formGroup]="formVeiculo" (ngSubmit)="formVeiculoSubmit()">
+
+        <ion-item>
+            <ion-label stacked>Modelo</ion-label>
+            <ion-input type="text" formControlName="modelo"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label stacked>KM Inicial</ion-label>
+            <ion-input type="number" formControlName="kmInicial"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <button ion-button type="submit">Gravar</button>
+        </ion-item>
+
+    </form>
+
+</ion-content>

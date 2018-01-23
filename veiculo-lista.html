@@ -1,0 +1,40 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Veiculos</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class>
+
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let v of veiculos">
+
+        <ion-item>
+          <ion-avatar item-start>
+              <img src="{{v.foto}}" *ngIf="v.foto">
+          </ion-avatar>
+            <h2>{{ v.modelo }}</h2>
+        </ion-item>
+
+        <ion-item-options side="left">
+            <button ion-button color="dark" (click)="tiraFoto(v.id)">
+                <ion-icon name="camera"></ion-icon>
+                Foto
+            </button>
+        </ion-item-options>
+
+    </ion-item-sliding>
+
+  </ion-list>
+
+    <ion-fab bottom right>
+        <button ion-fab (click)="abreVeiculoForm()">
+            <ion-icon name="add"></ion-icon>
+        </button>
+    </ion-fab>
+
+</ion-content>
